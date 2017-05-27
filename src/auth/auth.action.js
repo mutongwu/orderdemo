@@ -61,11 +61,12 @@ function loginError(error) {
   };
 }
 
-export function doLogin() {
+export function doLogin(val) {
   return function (dispatch) {
     dispatch(loginStart());
 
-    api.testAsync()
+    // api.testAsync()
+    authUtil.setToken(val)
       .then(data => dispatch(loginSuccess(data)))
       .catch(error => dispatch(loginError(error)));
   };

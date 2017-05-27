@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
+import { Actions, Scene, ActionConst } from 'react-native-router-flux';
 // import { setRedirectUrl } from 'components/AuthContainer/auth.action';
 
 class AuthContainer extends Component {
@@ -17,7 +18,7 @@ class AuthContainer extends Component {
       isLoggedIn
     } = this.props;
     if (isLoggedIn) {
-      return this.props.children
+      return (<Scene>{this.props.children}</Scene>)
     } else {
       return null
     }

@@ -4,7 +4,7 @@
  * React Native Starter App
  * https://github.com/mcnamee/react-native-starter-app
  */
-import React from 'react';
+import React, { Component } from 'react';
 import { Actions, Scene, ActionConst } from 'react-native-router-flux';
 
 // Consts and Libs
@@ -51,18 +51,54 @@ import { Actions, Scene, ActionConst } from 'react-native-router-flux';
 //     </Scene>
 //   </Scene>,
 // );
+// import { connect } from 'react-redux';
+// import { View } from 'react-native';
 import Login from '../login'
 import Home from '../home'
 import Order from '../order'
-import AuthContainer from '../auth'
-export default Actions.create(
-  <Scene key="root">
-    <Scene key="login" component={Login} title="Login" hideNavBar={false} />
-    <Scene key="home" component={Home} initial hideNavBar/>
+import OrderDetail from '../orderdetail'
+import Placeholder from '../placeholder'
+// import AuthContainer from '../auth'
 
-    <Scene key="auth" component={AuthContainer}>
-    	<Scene key="order" component={Order} title="我的订单" hideNavBar={false} />
-    </Scene>
+// class App extends Component {
+//   // static propTypes = {
+//   //   children: PropTypes.object,
+//   // }
+
+//   componentDidUpdate(prevProps) {
+//     const { dispatch, redirectUrl } = this.props;
+//     // const {preLoggedIn = isLoggedIn} = prevState;
+//     const isLoggingOut = prevProps.isLoggedIn && !this.props.isLoggedIn;
+//     const isLoggingIn = !prevProps.isLoggedIn && this.props.isLoggedIn;
+//     // console.log(isLoggingIn, redirectUrl, preLoggedIn)
+//     if (isLoggingIn) {
+//       dispatch(navigateTo(redirectUrl));
+//     } else if (isLoggingOut) {
+//       // do any kind of cleanup or post-logout redirection here
+//     }
+//   }
+//   render() {
+//     return (<Scene key="container">{this.props.children}</Scene>);
+//   }
+// }
+// function mapStateToProps(state){
+//   return {
+//     isLoggedIn: state.auth.isLoggedIn,
+//     redirectUrl:  state.auth.currentURL,
+//   }
+// }
+// const MappedApp = connect(mapStateToProps)(App);
+
+export default Actions.create(
+  <Scene key="root" >
+  	 
+  	<Scene key="placeholder" component={Placeholder} hideNavBar initial />
+
+    <Scene key="login" component={Login} title="Login" hideNavBar={false} />
+    <Scene key="home" component={Home}  hideNavBar/>
+
+	<Scene key="order" component={Order} title="我的订单" hideNavBar={false} />
+	<Scene key="orderdetail" component={OrderDetail} title="订单详情" hideNavBar={false} />
   </Scene>
 );
 

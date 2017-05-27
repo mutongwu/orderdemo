@@ -3,7 +3,7 @@ import { AsyncStorage } from 'react-native';
 export default {
 
 	KEY: 'id_token',
-
+	
 	async getToken(){
 		try {
 	      const token = await AsyncStorage.getItem(this.KEY);

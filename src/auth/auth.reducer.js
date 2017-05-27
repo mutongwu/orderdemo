@@ -12,7 +12,7 @@ import {
 
 const initialState = {
   isLoggedIn: false,
-  currentURL: '/',
+  currentURL: null,
   loading: false,
   authData: null,
 };
