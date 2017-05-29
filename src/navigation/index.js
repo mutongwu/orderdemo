@@ -97,8 +97,8 @@ export default Actions.create(
     <Scene key="login" component={Login} title="Login" hideNavBar={false} />
     <Scene key="home" component={Home}  hideNavBar/>
 
-	<Scene key="order" component={Order} title="我的订单" hideNavBar={false} />
-	<Scene key="orderdetail" component={OrderDetail} title="订单详情" hideNavBar={false} />
+    <Scene key="order" component={Order} title="我的订单" hideNavBar={false} />
+    <Scene key="orderdetail" component={OrderDetail} title="订单详情" hideNavBar={false} hideTabBar  />
   </Scene>
 );
 

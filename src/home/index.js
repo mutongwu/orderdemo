@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Actions} from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import { Text, View, Alert} from 'react-native';
-import { Styles } from '@theme/';
+import { Styles, AppColors } from '@theme/';
 import {Spacer, Button} from '@components/ui/';
 import { doLogout } from '../auth/auth.action';
 
@@ -33,11 +33,11 @@ class Home extends Component {
       		<Text style={Styles.p, Styles.paddingLeft}>react-native-elements/react-native-vector-icons</Text>
   		    <Spacer size={10} />
 
-		      <Button icon={{name: 'list', size: 28}} title={'我的订单'} onPress={ this.myOrder.bind(this)}/>
+		      <Button icon={{name: 'view-list', size: 28}} title={'我的订单'} onPress={ this.myOrder.bind(this)}/>
           <Spacer size={10} />
-          {isLoggedIn && <Button icon={{name: 'close', size: 28}} title={'退出登录'} onPress={ this.logout.bind(this)}/>}
+          {isLoggedIn && <Button icon={{name: 'close', size: 28}} title={'退出登录'}  backgroundColor={AppColors.brand.secondary} onPress={ this.logout.bind(this)}/>}
           <Spacer size={10} />
-          {!isLoggedIn && <Button icon={{name: 'redo', size: 28}} title={'登录'} onPress={ this.login.bind(this)}/>}
+          {!isLoggedIn && <Button icon={{name: 'vpn-key', size: 28}} title={'登录'} onPress={ this.login.bind(this)}/>}
       </View>
     );
   }

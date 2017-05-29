@@ -87,7 +87,7 @@ export function doAuthCheck() {
     // dispatch(authGet());
 
     authUtil.getToken()
-      .then(data => dispatch(loginSuccess(data)))
+      .then(data => data && dispatch(loginSuccess(data)))
       .catch(error => dispatch(loginError(error)));
   };
 }

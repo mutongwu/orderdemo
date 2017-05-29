@@ -241,4 +241,18 @@ export default {
     borderTopColor: Colors.border,
     borderTopWidth: 1,
   },
+  borderTop: {
+    borderTopColor: Colors.border,
+    borderTopWidth: 1,
+  },
+  borderBottom: {
+    borderBottomColor: Colors.border,
+    borderBottomWidth: 1,
+  },
+  border: {
+    borderRadius: Sizes.borderRadius,
+    borderStyle: 'solid',
+    borderColor: Colors.border,
+    borderWidth: 1,
+  }
 };

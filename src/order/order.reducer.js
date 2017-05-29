@@ -7,11 +7,30 @@ import {
   TEST_ASYNC_ACTION_SUCCESS,
 } from './order.action';
 
-const initialState = {
-  loading: false,
-  listData: [],
-  error: null,
-};
+
+const initialState = (() => {
+  const max = 20;
+  let i = 0;
+  const arr = [];
+  let pic = 'http://a.vpimg2.com/upload/merchandise/pdcvis/603480/2017/0414/100/7e864ec6-741d-40e9-a4ee-b4d982d9dd87.jpg';
+  // let pic = require('../images/login.jpg');
+  while (i < max) {
+    let rd = String(Math.random()).substr(3, 9);
+    arr.push({
+      id: i,
+      num: rd,
+      img: pic,
+      goodsName: '2017夏上新经典休闲头层牛皮革平底女式凉鞋黑色',
+      size: 'M',
+      price: rd.substr(4, 6),
+      status: (i % 2 === 0 ? '已完成' : '已取消')
+    });
+    i++;
+  }
+  return {
+    orderData: arr
+  }
+})();
 
 const actionsMap = {
   [TEST_ACTION]: (state) => {

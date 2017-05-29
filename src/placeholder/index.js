@@ -11,7 +11,7 @@ class Placeholder extends Component {
     dispatch(doAuthCheck());
   }
   componentDidMount() {
-    Actions.home();
+    Actions.home({ type: ActionConst.REPLACE });
   }
   render() {
     return (
