@@ -12,8 +12,8 @@ export default class OrderDetail extends Component {
     const {initData} = this.props;
     return (
       <ScrollView>
-      <View style={[AppStyles.padding, {marginBottom:10}]}>
-      		<View style={[AppStyles.border, AppStyles.paddingSml]}>
+      <View style={[AppStyles.padding]}>
+      		<View style={[AppStyles.border, AppStyles.paddingSml, {marginBottom:10}]}>
             <Text style={[AppStyles.h5, AppStyles.borderBottom]}>订单信息</Text>
             <Text style={AppStyles.p}>订单编号：{initData.num}</Text>
             <Text style={AppStyles.p}>下单时间：2016-11-09</Text>
