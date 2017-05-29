@@ -9,10 +9,6 @@ import AuthUtil from '../utils/authUtil';
 class Order extends Component {
 	constructor(props) {
     super(props);
-    
-    this.state = {
-      
-    };
   }
   goDetail(data) {
   	Actions.orderdetail({initData: data});
@@ -22,7 +18,7 @@ class Order extends Component {
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1.id !== r2.id});
     const dataSource =  ds.cloneWithRows(orderData)
     return (
-      <List >
+      <List style={{paddingTop:0}}>
         <ListView
           dataSource={dataSource}
           renderRow={(item) => {
